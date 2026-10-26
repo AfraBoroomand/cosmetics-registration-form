@@ -1,38 +1,45 @@
 @font-face {
   font-family: "IRANSans";
   src:
-    url(../fonts/woff2/IRANSansWeb_Light.woff2) format("woff2"),
-    url(../fonts/woff/IRANSansWeb_Light.woff) format("woff");
+    url("../fonts/IRANSansWeb_Light.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "IRANSans";
   src:
-    url(../fonts/woff2/IRANSansWeb.woff2) format("woff2"),
-    url(../fonts/woff/IRANSansWeb.woff) format("woff");
+    url("../fonts/IRANSansWeb.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "IRANSans";
   src:
-    url(../fonts/woff2/IRANSansWeb_Medium.woff2) format("woff2"),
-    url(../fonts/woff/IRANSansWeb_Medium.woff) format("woff");
+    url("../fonts/IRANSansWeb_Medium.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "IRANSans";
   src:
-    url(../fonts/woff2/IRANSansWeb_Bold.woff2) format("woff2"),
-    url(../fonts/woff/IRANSansWeb_Bold.woff) format("woff");
-  font-weight: 600;
+    url("../fonts/IRANSansWeb_Bold.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
-  font-display: swap;
+}
+:root {
+  --bg-deep: #420f30;
+  --glass-card: rgba(66, 15, 48, 0.45);
+  --glass-input: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 235, 184, 0.25);
+  --glass-border-focus: #ffebb8;
+  --text-title: #ffebb8;
+  --text-body: #ffffff;
+  --text-placeholder: rgba(255, 235, 184, 0.5);
+  --btn-glow: #bd5579;
 }
 * {
   box-sizing: border-box;
@@ -40,184 +47,180 @@
   padding: 0;
   font-family: "IRANSans", sans-serif;
 }
-:root {
-  --bg-deep: #420f30;
-  --glass-card: rgba(66, 15, 48, 0.45);
-  --glass-input: rgba(255, 255, 255, 0.12);
-  --glass-border: rgba(255, 235, 184, 0.25);
-  --text-title: #ffebb8;
-  --text-body: #ffffff;
-  --text-placeholder: rgba(255, 235, 184, 0.5);
-  --btn-glow: #bd5579;
-}
 body {
-  width: 100%;
   min-height: 100vh;
-  background:
-    linear-gradient(rgba(30, 5, 20, 0.35), rgba(30, 5, 20, 0.55)),
-    url(../img/bgsabtnam.webp) no-repeat center center / cover;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(30, 5, 20, 0.45), rgba(30, 5, 20, 0.65)),
+    url(../img/bgsabtnam.webp) no-repeat center center / cover;
+  background-attachment: fixed;
+  color: var(--text-body);
+}
+body.login-page {
+  background:
+    linear-gradient(rgba(30, 5, 20, 0.35), rgba(30, 5, 20, 0.55)),
+    url(../img/bgvorood.webp) no-repeat center center / cover;
+  background-attachment: fixed;
 }
 .container {
-  width: 90%;
-  max-width: 440px;
-  padding: 32px 24px;
-  background-color: var(--glass-card);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 460px;
+  background: var(--glass-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
   color: var(--text-title);
-  margin-bottom: 6px;
+  font-size: 1.55rem;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 8px;
 }
 .meta {
-  font-size: 0.8rem;
-  padding: 4px 14px;
-  border-radius: 20px;
-  color: var(--text-title);
-  margin-bottom: 24px;
-  background-color: rgba(255, 235, 184, 0.12);
-  border: 1px solid var(--glass-border);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 300;
   text-align: center;
+  color: var(--text-body);
+  opacity: 0.85;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }
 form {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 .formitem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   width: 100%;
 }
 label {
-  color: var(--text-title);
   font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 6px;
-  display: block;
+  color: var(--text-title);
+  font-weight: 400;
 }
 input[type="text"],
-input[type="tel"],
-input[type="email"],
 input[type="password"],
+input[type="email"],
+input[type="tel"],
 input[type="number"],
 select,
 textarea {
   width: 100%;
-  height: 42px;
-  background-color: var(--glass-input);
-  padding: 0 14px;
+  padding: 10px 14px;
+  background: var(--glass-input);
+  border: 1px solid var(--glass-border);
   border-radius: 10px;
   color: var(--text-body);
   font-size: 0.9rem;
-  border: 1px solid var(--glass-border);
   outline: none;
   transition: all 0.25s ease;
 }
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: var(--text-title);
-  background-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0 10px rgba(255, 235, 184, 0.25);
-}
-input[type="email"] {
-  direction: ltr !important;
+  border-color: var(--glass-border-focus);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 10px rgba(255, 235, 184, 0.3);
 }
 textarea {
-  height: 90px;
-  padding: 10px 14px;
-  resize: none;
+  resize: vertical;
+  min-height: 75px;
 }
-option {
-  background-color: var(--bg-deep);
+select {
+  cursor: pointer;
+}
+select option {
+  background: var(--bg-deep);
   color: var(--text-body);
 }
 .select {
   display: flex;
   gap: 12px;
-  width: 100%;
 }
 .select .formitem {
   flex: 1;
+}
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: -2px;
 }
 .check {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 4px;
 }
 .check input[type="checkbox"] {
+  accent-color: var(--btn-glow);
   width: 16px;
   height: 16px;
-  accent-color: var(--btn-glow);
   cursor: pointer;
 }
 .check label {
-  margin-bottom: 0;
-  cursor: pointer;
   font-size: 0.8rem;
-  color: var(--text-title);
-}
-button {
-  position: relative;
-  width: 100%;
-  height: 48px;
-  background: linear-gradient(135deg, #bd5579 0%, #420f30 100%);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
+  color: var(--text-body);
   cursor: pointer;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(66, 15, 48, 0.4);
-  margin-top: 10px;
+  user-select: none;
 }
-button span {
-  position: relative;
-  z-index: 2;
+.forgot-link {
   color: var(--text-title);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: color 0.4s ease;
+  font-size: 0.8rem;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+.forgot-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+button[type="submit"] {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 235, 184, 0.3),
-    transparent
-  );
-  transition: left 0.6s ease;
+  padding: 12px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, var(--btn-glow), #8b2b52);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(189, 85, 121, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
-button:hover {
+button[type="submit"]:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(189, 85, 121, 0.45);
-  border-color: var(--text-title);
+  box-shadow: 0 6px 20px rgba(189, 85, 121, 0.55);
 }
-button:hover::before {
-  left: 100%;
+button[type="submit"]:active {
+  transform: translateY(0);
 }
-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 10px rgba(189, 85, 121, 0.3);
+.switch-form {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--text-body);
+}
+.switch-form a {
+  color: var(--text-title);
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.switch-form a:hover {
+  text-decoration: underline;
 }
