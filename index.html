@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afra Cosmetics</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ثبت‌نام کنید</h1>
+      <span class="meta">لطفا بخش‌های پیش رو را بر اساس اطلاعات حقیقی خود پر کنید.</span>
+      <form action="#" method="post">
+        <div class="formitem">
+          <label for="fullname">نام و نام خانوادگی</label>
+          <input type="text" id="fullname" name="fullname" maxlength="50" />
+        </div>
+        <div class="formitem">
+          <label for="phnumber">شماره تماس</label>
+          <input type="tel" id="phnumber" name="phnumber" maxlength="11" />
+        </div>
+        <div class="formitem">
+          <label for="email">ایمیل خود را وارد کنید.</label>
+          <input type="email" id="email" name="email" maxlength="254" />
+        </div>
+        <div class="select">
+          <div class="formitem">
+            <label for="gender">جنسیت</label>
+            <select name="gender" id="gender">
+              <option value="">انتخاب کنید</option>
+              <option value="female">زن</option>
+              <option value="male">مرد</option>
+            </select>
+          </div>
+          <div class="formitem">
+            <label for="age">سن</label>
+            <input type="number" id="age" name="age" min="5" />
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="adress">نشانی</label>
+          <textarea id="adress" name="adress"></textarea>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="remember" name="remember" />
+          <label for="remember">من را به خاطر بسپار</label>
+        </div>
+        <button type="submit">
+          <span>تکمیل ثبت‌نام</span>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

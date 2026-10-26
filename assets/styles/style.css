@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Light.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Medium.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Bold.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Bold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "IRANSans", sans-serif;
+}
+:root {
+  --bg-deep: #420f30;
+  --glass-card: rgba(66, 15, 48, 0.45);
+  --glass-input: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 235, 184, 0.25);
+  --text-title: #ffebb8;
+  --text-body: #ffffff;
+  --text-placeholder: rgba(255, 235, 184, 0.5);
+  --btn-glow: #bd5579;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(30, 5, 20, 0.35), rgba(30, 5, 20, 0.55)),
+    url(../img/bgsabtnam.webp) no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.container {
+  width: 90%;
+  max-width: 440px;
+  padding: 32px 24px;
+  background-color: var(--glass-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-title);
+  margin-bottom: 6px;
+  text-align: center;
+}
+.meta {
+  font-size: 0.8rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  color: var(--text-title);
+  margin-bottom: 24px;
+  background-color: rgba(255, 235, 184, 0.12);
+  border: 1px solid var(--glass-border);
+  text-align: center;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.formitem {
+  width: 100%;
+}
+label {
+  color: var(--text-title);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  height: 42px;
+  background-color: var(--glass-input);
+  padding: 0 14px;
+  border-radius: 10px;
+  color: var(--text-body);
+  font-size: 0.9rem;
+  border: 1px solid var(--glass-border);
+  outline: none;
+  transition: all 0.25s ease;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--text-title);
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 10px rgba(255, 235, 184, 0.25);
+}
+input[type="email"] {
+  direction: ltr !important;
+}
+textarea {
+  height: 90px;
+  padding: 10px 14px;
+  resize: none;
+}
+option {
+  background-color: var(--bg-deep);
+  color: var(--text-body);
+}
+.select {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+.select .formitem {
+  flex: 1;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--btn-glow);
+  cursor: pointer;
+}
+.check label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--text-title);
+}
+button {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #bd5579 0%, #420f30 100%);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(66, 15, 48, 0.4);
+  margin-top: 10px;
+}
+button span {
+  position: relative;
+  z-index: 2;
+  color: var(--text-title);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.4s ease;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 235, 184, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(189, 85, 121, 0.45);
+  border-color: var(--text-title);
+}
+button:hover::before {
+  left: 100%;
+}
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(189, 85, 121, 0.3);
+}
